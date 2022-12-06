@@ -12,6 +12,7 @@ def start_of_packet_marker(num_distinct_char: 4)
             packet.shift
         end
     end
+    return -1 if packet.length < num_distinct_char
     marker
 end
 
