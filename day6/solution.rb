@@ -1,11 +1,11 @@
 #!/usr/bin/ruby
 
 def start_of_packet_marker(num_distinct_char: 4)
-    packet = []
     marker = 0
+    packet = []
     line = File.open("input", &:readline)
-    line.chars.each_with_index do |c, i|
-        marker = i+1
+    line.chars.each do |c|
+        marker += 1
         packet << c if packet.length < num_distinct_char
         if packet.length == num_distinct_char
             break if packet.uniq.length == packet.length
